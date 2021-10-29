@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.weblog.mapper.RefererTopMapper" >
+  <resultMap id="BaseResultMap" type="com.weblog.domain.RefererTop" >
+    <result column="http_referer" property="httpReferer" jdbcType="VARCHAR" />
+ 
+    <result column="top10" property="top10" jdbcType="INTEGER" />
+  </resultMap>
+ 
+  <select id="selectTop10" resultMap="BaseResultMap">
+    select * from dw_referer_top10 order by top10 desc
+  </select>
+</mapper>
